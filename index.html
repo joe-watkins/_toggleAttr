@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>_toggleAttr();</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<h1>_toggleAttr();</h1>
+		<p><button class="waves-effect waves-light btn" aria-pressed="false" aria-expanded="false" data-another="true" data-foo="bar" style="background: #F44336;">Button</button></p>
+		<p>Inspect element to see attributes being toggled on click.</p>
+	</div>
+	<script src="dist/_toggleAttr.min.js"></script>
+	<script>
+		var button = document.getElementsByTagName("button")[0];
+
+		button.addEventListener("click", function(e){
+
+			var el = this;
+
+			_toggleAttr(el,["aria-expanded","aria-pressed","data-another"]);
+
+			_toggleAttr(el,{
+				"data-foo": {
+					default: "bar",
+					new: "meow"
+				},
+				"style": {
+					default: "background: #F44336;",
+					new: "background: #26a69a;"
+				}
+			});
+
+		});
+	</script>
+</body>
+</html>

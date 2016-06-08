@@ -1,0 +1,12 @@
+/node_modules/
+/bower_components/
+/.sass-cache/
+/.tmp/
+
+*/.DS_Store
+.DS_Store
+.DS_Store?
+
+config.json
+gulpfile.js
+package.json
